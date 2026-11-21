@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    min-height: 400px;
+    overflow: hidden;
+    background:
+        repeating-linear-gradient(to right, #ffffff 0 40px, transparent 40px 80px) left bottom 75px / 100% 5px no-repeat,
+        linear-gradient(#555555, #555555) left bottom / 100% 110px no-repeat,
+        linear-gradient(#87ceeb, #dff4ff 65%, #6ab04c 65%);
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ffd60a;
+    box-shadow: 0 0 40px #ffd60a;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    bottom: 110px;
+    left: 20%;
+    width: 100px;
+    height: 170px;
+    background:
+        radial-gradient(circle at 50px 50px, #2d6a4f 49px, transparent 50px),
+        linear-gradient(#8b5a2b, #8b5a2b) center bottom / 18px 80px no-repeat;
+}
+
+.car {
+    position: absolute;
+    bottom: 40px;
+    left: -200px;
+    z-index: 1;
+    width: 200px;
+    height: 45px;
+    background-color: #e63946;
+    border-left: 6px solid #9d0208;
+    border-right: 6px solid #ffd60a;
+    border-radius: 15px 25px 8px 8px;
+    animation: drive 4s ease-out forwards;
+}
+
+.car::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 40px;
+    width: 110px;
+    height: 40px;
+    background: linear-gradient(to right, #a8dadc 45%, #e63946 45% 55%, #a8dadc 55%);
+    border: 6px solid #e63946;
+    border-bottom: none;
+    border-radius: 30px 40px 0 0;
+}
+
+.car::after {
+    content: "";
+    position: absolute;
+    left: -6px;
+    bottom: -20px;
+    width: 200px;
+    height: 40px;
+    background:
+        radial-gradient(circle at 45px 20px, #cccccc 7px, #222222 8px 20px, transparent 21px),
+        radial-gradient(circle at 155px 20px, #cccccc 7px, #222222 8px 20px, transparent 21px);
+}
+
+@keyframes drive {
+    from {
+        left: -200px;
+    }
+    to {
+        left: calc(100% - 250px);
+    }
+}
